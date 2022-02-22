@@ -1,0 +1,14 @@
+<ul>
+  {{#each issues}}
+    <li>
+        <a href="/vagas/{{node.number}}">
+            <div>
+                <span>{{node.author.login}}</span>
+                <img src="{{node.author.avatarUrl}}"  />
+            </div>
+            <h4>{{node.title}}</h4>
+            <p>{{node.state}}</p>
+        </a>
+    </li>
+  {{/each}}
+</ul>
