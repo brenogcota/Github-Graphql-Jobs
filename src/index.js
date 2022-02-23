@@ -49,7 +49,7 @@ app.get('/', async (req, res, next) => {
   
     const { repository: { issues }} = await client.request(query)
     const totalCount = Array.from({length: issues.totalCount}, (_, i) => i + 1)
-    res.render('home', { issues: issues.edges, totalCount })
+    res.render('home', { issues: issues.edges, totalCount, repo: owner })
     
   } catch (error) {
     next(error)

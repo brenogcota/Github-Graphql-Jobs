@@ -1,7 +1,7 @@
 <ul class="grid grid-cols-4 gap-4">
   {{#each issues}}
     <li class="p-2 m-3 bg-gray-100 rounded-md">
-        <a href="/vagas/{{node.number}}">
+        <a href="/vagas/{{node.number}}/?repo={{repo}}">
             <div>
                 <img class="w-32 rounded" src="{{node.author.avatarUrl}}"  />
                 <span class="text-sm">{{node.author.login}}</span>
@@ -15,6 +15,6 @@
   
 <div class="overflow-y-auto flex max-w-md mx-auto" style="">
   {{#each totalCount}}
-    <a href="/?page={{this}}" class="p-2 m-3 bg-gray-100 rounded-md cursor-pointer">{{this}}</a>
+    <a href="/?page={{this}}&repo={{repo}}" class="p-2 m-3 bg-gray-100 rounded-md cursor-pointer">{{this}}</a>
   {{/each}}
 </div>
