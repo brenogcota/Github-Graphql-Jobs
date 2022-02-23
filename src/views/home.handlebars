@@ -1,14 +1,20 @@
-<ul>
+<ul class="grid grid-cols-4 gap-4">
   {{#each issues}}
-    <li>
+    <li class="p-2 m-3 bg-gray-100 rounded-md">
         <a href="/vagas/{{node.number}}">
             <div>
-                <span>{{node.author.login}}</span>
-                <img src="{{node.author.avatarUrl}}"  />
+                <img class="w-32 rounded" src="{{node.author.avatarUrl}}"  />
+                <span class="text-sm">{{node.author.login}}</span>
             </div>
             <h4>{{node.title}}</h4>
-            <p>{{node.state}}</p>
+            <p class="bg-green-400 text-slate-100">{{node.state}}</p>
         </a>
     </li>
   {{/each}}
 </ul>
+  
+<div class="overflow-y-auto flex max-w-md mx-auto" style="">
+  {{#each totalCount}}
+    <a href="/?page={{this}}" class="p-2 m-3 bg-gray-100 rounded-md cursor-pointer">{{this}}</a>
+  {{/each}}
+</div>
